@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "create-elm-app": "^4.2.1",
+    "netlify-cli": "^2.38.0"
+  }
+}

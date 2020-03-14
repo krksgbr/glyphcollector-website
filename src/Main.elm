@@ -6,6 +6,7 @@ import Browser.Events
 import Browser.Navigation as Nav
 import Colophon
 import Color
+import Donate
 import Element exposing (..)
 import Element.Background as Background
 import Element.Border as Border
@@ -197,11 +198,21 @@ view : Model -> Browser.Document Msg
 view model =
     let
         sections =
-            [ .intro
-            , .getStarted
-            , .gallery
-            , .colophon
-            ]
+            if not model.device.isMobile then
+                [ .intro
+                , .donate
+                , .getStarted
+                , .gallery
+                , .colophon
+                ]
+
+            else
+                [ .intro
+                , .getStarted
+                , .gallery
+                , .colophon
+                , .donate
+                ]
 
         sectionConfig =
             { intro =
@@ -209,6 +220,10 @@ view model =
                 , view =
                     Intro.view model.device model.introModel
                         |> Element.map IntroMsg
+                }
+            , donate =
+                { nav = Donate.navItem
+                , view = Donate.view model.device
                 }
             , getStarted =
                 { nav = GetStarted.navItem

@@ -1,6 +1,8 @@
 module Intro exposing (..)
 
+import Color
 import Element exposing (..)
+import Element.Background as Background
 import Element.Font as Font
 import Html.Attributes as HA
 import Http

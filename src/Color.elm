@@ -40,7 +40,12 @@ background =
 
 darkBackground : Color
 darkBackground =
-    Element.rgb 0.43 0.43 0.43
+    let
+        shade =
+            0.2
+    in
+
+    Element.rgb shade shade shade
 
 
 transparent : Color

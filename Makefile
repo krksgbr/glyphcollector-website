@@ -1,5 +1,6 @@
-
 sources = $(shell find $(1) -type f)
+
+all: build
 
 node_modules:
 	@yarn
